@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megatrend Monitor · Structural Forces Shaping Economies and Markets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:     #FDF8F0;
+    --paper:     #FEFCF8;
+    --rule:      #D4C8B0;
+    --rule-light:#EAE4D8;
+    --ink:       #1A1614;
+    --ink-mid:   #4A3F38;
+    --ink-muted: #8C7F75;
+    --ink-faint: #B8AFA6;
+    --ft-pink:   #FCD0B1;
+    --ft-salmon: #F2A07B;
+    --positive:  #0A5C36;
+    --pos-bg:    #EBF5EF;
+    --neutral:   #7A5C00;
+    --neu-bg:    #FDF4DC;
+    --negative:  #8B1A1A;
+    --neg-bg:    #FAE8E8;
+    --blue-ink:  #1A3A5C;
+    --serif:     'Playfair Display', 'Georgia', serif;
+    --sans:      'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+    --mono:      'Source Code Pro', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+
+  /* ── Masthead ── */
+  .masthead {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 14px 0;
+    border-bottom: 3px solid var(--ink);
+  }
+  .masthead-inner {
+    max-width: 1160px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center;
+    justify-content: space-between; gap: 16px;
+  }
+  .masthead-brand {
+    font-family: var(--serif);
+    font-size: 24px; font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .masthead-brand span { color: var(--ft-salmon); }
+  .masthead-meta {
+    font-family: var(--mono);
+    font-size: 11px; color: var(--ink-muted);
+    text-align: right;
+  }
+
+  /* ── Section rule ── */
+  .section-rule {
+    border: none;
+    border-top: 3px solid var(--ink);
+    margin: 0;
+  }
+  .thin-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 0;
+  }
+
+  /* ── Container ── */
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Dateline ── */
+  .dateline {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-family: var(--mono);
+    font-size: 11px; color: var(--ink-muted);
+    border-bottom: 1px solid var(--rule-light);
+    margin-bottom: 0;
+  }
+
+  /* ── Hero section ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+    padding: 28px 0 24px;
+  }
+  .hero-score-col {
+    border-right: 1px solid var(--rule);
+    padding-right: 28px;
+  }
+  .hero-score-label {
+    font-family: var(--mono);
+    font-size: 10px; color: var(--ink-muted);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .hero-score-number {
+    font-family: var(--serif);
+    font-size: 80px; line-height: 1;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
+  .hero-score-number.positive { color: var(--positive); }
+  .hero-score-number.neutral  { color: var(--neutral); }
+  .hero-score-number.negative { color: var(--negative); }
+
+  .hero-score-bar-wrap { margin: 10px 0 12px; }
+  .hero-score-bar-bg {
+    height: 4px; background: var(--rule-light);
+    border-radius: 0;
+  }
+  .hero-score-bar-fill {
+    height: 100%;
+    transition: width 0.9s cubic-bezier(0.16,1,0.3,1);
+  }
+  .hero-score-bar-fill.positive { background: var(--positive); }
+  .hero-score-bar-fill.neutral  { background: var(--neutral); }
+  .hero-score-bar-fill.negative { background: var(--negative); }
+
+  .hero-score-verdict {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    padding: 3px 8px;
+    display: inline-block;
+  }
+  .hero-score-verdict.positive { background: var(--pos-bg); color: var(--positive); }
+  .hero-score-verdict.neutral  { background: var(--neu-bg); color: var(--neutral); }
+  .hero-score-verdict.negative { background: var(--neg-bg); color: var(--negative); }
+
+  .hero-text-col { padding-left: 28px; }
+  .hero-kicker {
+    font-family: var(--mono);
+    font-size: 10px; color: var(--ink-muted);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: 28px; font-weight: 700;
+    line-height: 1.2; letter-spacing: -0.3px;
+    margin-bottom: 10px;
+  }
+  .hero-standfirst {
+    font-size: 14px; color: var(--ink-mid);
+    line-height: 1.6; max-width: 560px;
+    margin-bottom: 16px;
+  }
+  .signal-row {
+    display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  .signal-item {
+    display: flex; align-items: center; gap: 6px;
+  }
+  .signal-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .signal-dot.positive { background: var(--positive); }
+  .signal-dot.neutral  { background: var(--neutral); }
+  .signal-dot.negative { background: var(--negative); }
+  .signal-text {
+    font-family: var(--mono);
+    font-size: 11px; color: var(--ink-mid);
+  }
+  .signal-count {
+    font-weight: 500; color: var(--ink);
+  }
+
+  /* ── Grid section ── */
+  .grid-section { padding: 24px 0 0; }
+  .grid-section-header {
+    display: flex; align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .grid-section-title {
+    font-family: var(--serif);
+    font-size: 18px; font-weight: 700;
+  }
+  .grid-section-note {
+    font-family: var(--mono);
+    font-size: 10px; color: var(--ink-muted);
+  }
+
+  /* ── Trend cards ── */
+  .trend-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 3px solid var(--ink);
+    border-left: 1px solid var(--rule);
+  }
+  .trend-card {
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 18px 14px;
+    cursor: pointer;
+    background: var(--paper);
+    transition: background 0.12s;
+    position: relative;
+  }
+  .trend-card:hover { background: var(--ft-pink); transition: background 0.15s ease; }
+  .trend-card.active {
+    background: var(--ft-pink);
+    border-top: 3px solid var(--ink);
+    margin-top: -3px;
+  }
+
+  .card-category {
+    font-family: var(--mono);
+    font-size: 9px; color: var(--ink-muted);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .card-score-row {
+    display: flex; align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .card-score {
+    font-family: var(--serif);
+    font-size: 44px; line-height: 1;
+    font-weight: 700; letter-spacing: -1px;
+  }
+  .card-score.positive { color: var(--positive); }
+  .card-score.neutral  { color: var(--neutral); }
+  .card-score.negative { color: var(--negative); }
+  .card-score.loading  { color: var(--ink-faint); }
+
+  .card-direction {
+    font-family: var(--mono);
+    font-size: 20px; line-height: 1;
+    padding-bottom: 4px;
+  }
+  .card-direction.up     { color: var(--positive); }
+  .card-direction.down   { color: var(--negative); }
+  .card-direction.neutral{ color: var(--ink-muted); }
+
+  .card-bar-bg {
+    height: 2px; background: var(--rule-light);
+    margin-bottom: 10px;
+  }
+  .card-bar-fill {
+    height: 100%;
+    transition: width 0.9s cubic-bezier(0.16,1,0.3,1);
+  }
+  .card-bar-fill.positive { background: var(--positive); }
+  .card-bar-fill.neutral  { background: var(--neutral); }
+  .card-bar-fill.negative { background: var(--negative); }
+
+  .card-name {
+    font-family: var(--serif);
+    font-size: 13px; font-weight: 700;
+    line-height: 1.25; margin-bottom: 4px;
+  }
+  .card-desc {
+    font-size: 11px; color: var(--ink-muted);
+    line-height: 1.4; margin-bottom: 10px;
+  }
+  .card-footer {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--rule-light);
+    padding-top: 8px; margin-top: 4px;
+  }
+  .card-series-n {
+    font-family: var(--mono);
+    font-size: 10px; color: var(--ink-faint);
+  }
+  .card-signal {
+    font-family: var(--mono);
+    font-size: 9px; font-weight: 500;
+    padding: 2px 6px;
+    letter-spacing: 0.05em;
+  }
+  .card-signal.positive { background: var(--pos-bg); color: var(--positive); }
+  .card-signal.neutral  { background: var(--neu-bg); color: var(--neutral); }
+  .card-signal.negative { background: var(--neg-bg); color: var(--negative); }
+
+  /* ── Detail panel ── */
+  .detail-panel {
+    border-left: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    display: none;
+    margin-bottom: 24px;
+  }
+  .detail-panel.open { display: block; }
+  .detail-header {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--cream);
+  }
+  .detail-title {
+    font-family: var(--serif);
+    font-size: 15px; font-weight: 700;
+  }
+  .detail-close {
+    font-family: var(--mono);
+    font-size: 10px; color: var(--ink-muted);
+    background: none; border: 1px solid var(--rule);
+    cursor: pointer; padding: 3px 10px;
+    letter-spacing: 0.05em;
+    transition: all 0.12s;
+  }
+  .detail-close:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+  .series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0;
+  }
+  .series-item {
+    padding: 14px 16px;
+    border-right: 1px solid var(--rule-light);
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .series-item:nth-child(n) { border-right: 1px solid var(--rule-light); }
+  .series-name {
+    font-size: 11px; font-weight: 600;
+    line-height: 1.3; margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .series-source {
+    font-family: var(--mono);
+    font-size: 10px; color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+  .series-value-row {
+    display: flex; align-items: baseline; gap: 6px;
+  }
+  .series-value {
+    font-family: var(--serif);
+    font-size: 20px; font-weight: 700;
+    color: var(--ink);
+  }
+  .series-unit {
+    font-family: var(--mono);
+    font-size: 10px; color: var(--ink-muted);
+  }
+  .series-change {
+    font-family: var(--mono);
+    font-size: 10px; font-weight: 500;
+  }
+  .series-change.pos { color: var(--positive); }
+  .series-change.neg { color: var(--negative); }
+  .series-date {
+    font-family: var(--mono);
+    font-size: 10px; color: var(--ink-faint);
+    margin-top: 3px;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 3px solid var(--ink);
+    margin-top: 32px;
+    padding: 20px 0 32px;
+    background: var(--cream);
+  }
+  .footer-inner {
+    max-width: 1160px; margin: 0 auto; padding: 0 24px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .footer-note {
+    font-size: 12px; color: var(--ink-mid);
+    line-height: 1.7;
+  }
+  .footer-note strong { color: var(--ink); }
+  .footer-link {
+    color: var(--ink-mid);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s;
+  }
+  .footer-link:hover {
+    color: var(--ink);
+    text-decoration-color: var(--ink);
+  }
+  .footer-sources {
+    font-family: var(--mono);
+    font-size: 11px; color: var(--ink-muted);
+    line-height: 1.9; text-align: right;
+  }
+
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-score-col { border-right: none; border-bottom: 1px solid var(--rule); padding-right: 0; padding-bottom: 16px; margin-bottom: 16px; }
+    .hero-text-col { padding-left: 0; }
+    .trend-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-link {
+    color: var(--ink-mid);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 2px;
+    transition: color 0.15s;
+  }
+  .footer-link:hover {
+    color: var(--ink);
+    text-decoration-color: var(--ink);
+  }
+  .footer-sources { text-align: left; }
+    .hero-score-number { font-size: 56px; }
+  }
+  @media (max-width: 500px) {
+    .trend-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── Charts ── */
+  .charts-section { padding: 32px 0 0; }
+  .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 3px solid var(--ink);
+    border-left: 1px solid var(--rule);
+    margin-bottom: 32px;
+  }
+  .chart-card {
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 20px 16px;
+    background: var(--paper);
+  }
+  .chart-card-header {
+    display: flex; align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .chart-card-title {
+    font-family: var(--serif);
+    font-size: 14px; font-weight: 700;
+  }
+  .chart-card-category {
+    font-family: var(--mono);
+    font-size: 9px; color: var(--ink-muted);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 3px;
+  }
+  .chart-legend {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .chart-legend-item {
+    display: flex; align-items: center; gap: 5px;
+    font-family: var(--mono); font-size: 10px;
+    color: var(--ink-muted);
+  }
+  .chart-legend-line {
+    width: 16px; height: 2px;
+    flex-shrink: 0;
+  }
+  .chart-wrap {
+    position: relative;
+    height: 200px;
+  }
+  @media (max-width: 760px) {
+    .charts-grid { grid-template-columns: 1fr; }
+    .chart-wrap { height: 160px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Masthead -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-brand">Megatrend <span>Monitor</span></div>
+    <div class="masthead-meta">Inspired by Deutsche Bank Research Institute · May 2026</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Dateline -->
+  <div class="dateline">
+    <span>SIX STRUCTURAL FORCES · ECONOMIES AND MARKETS · SCORES RANGE FROM 0 (SEVERE HEADWIND) TO 100 (STRONG TAILWIND)</span>
+    <span id="updated-time">—</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-score-col">
+      <div class="hero-score-label">Overall Index</div>
+      <div class="hero-score-number neutral" id="overall-score">—</div>
+      <div class="hero-score-bar-wrap">
+        <div class="hero-score-bar-bg">
+          <div class="hero-score-bar-fill neutral" id="overall-bar" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="hero-score-verdict neutral" id="overall-verdict">Loading</div>
+    </div>
+    <div class="hero-text-col">
+      <div class="hero-headline" id="hero-headline">The structural forces<br>shaping economies and markets</div>
+      <div class="hero-standfirst">
+        Six megatrends tracked across approximately 85 real-time data series. The defining tension of this decade is whether AI-driven productivity can outrun the compounding pressures of sovereign debt, demographic decline and geopolitical fragmentation.
+      </div>
+      <div class="signal-row" id="signal-row">
+        <div class="signal-item">
+          <div class="signal-dot positive"></div>
+          <div class="signal-text"><span class="signal-count" id="sig-pos">—</span> rising over the past year</div>
+        </div>
+        <div class="signal-item">
+          <div class="signal-dot negative"></div>
+          <div class="signal-text"><span class="signal-count" id="sig-neg">—</span> falling over the past year</div>
+        </div>
+        <div class="signal-item">
+          <div class="signal-dot neutral"></div>
+          <div class="signal-text"><span class="signal-count" id="sig-neu">—</span> broadly flat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trend grid -->
+  <div class="grid-section">
+    <div class="grid-section-header">
+      <div class="grid-section-title">The Six Megatrends</div>
+      <div class="grid-section-note">SELECT ANY CARD TO EXPAND THE UNDERLYING DATA</div>
+    </div>
+    <div class="trend-grid" id="trend-grid">
+      <!-- Cards injected by JS -->
+    </div>
+    <div class="detail-panel" id="detail-panel">
+      <div class="detail-header">
+        <div class="detail-title" id="detail-title">—</div>
+        <button class="detail-close" onclick="closeDetail()">Close</button>
+      </div>
+      <div class="series-grid" id="series-grid"></div>
+    </div>
+  </div>
+
+  <!-- Charts section -->
+  <div class="charts-section">
+    <hr class="section-rule" style="margin-bottom:24px">
+    <div class="grid-section-header">
+      <div class="grid-section-title">Key Indicators Over Time</div>
+      <div class="grid-section-note">TWO KEY SERIES PER MEGATREND · SOURCE: FRED AND WORLD BANK</div>
+    </div>
+    <div class="charts-grid" id="charts-grid"></div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-note">
+      <strong>Methodology.</strong> Each theme's score is a <strong>percentile</strong>: it places the current reading of that theme's public indicators within their own history (0 = historically low, 50 ≈ around the historical norm, 100 = historically high), oriented so a higher score means the theme's conditions are historically strong. Inputs span the Federal Reserve Economic Data, Yahoo Finance and the World Bank (~85 series). Direction arrows show movement over the past year. This is a <strong>monitor, not a forecast</strong> — it describes where things sit today and how they have moved, and makes no prediction and gives no investment advice. <strong>It is an independent hard-data monitor, not a replication of Deutsche Bank's model</strong>: it does not use their dataset, their qualitative or survey inputs, or their ~70-year history, and cannot reproduce their figures. Its thematic structure is <em>inspired by</em> Deutsche Bank Research Institute, <em>Megatrends: AI vs the Decade's Structural Headwinds</em> (May 2026); any quotes from that report are the bank's own views, shown as context.
+    </div>
+    <div class="footer-sources">
+      Data: FRED · Yahoo Finance · World Bank<br>
+      Refreshed daily via GitHub Actions<br>
+      <br>
+      Built by <a href="https://www.linkedin.com/in/mbbedir/" target="_blank" rel="noopener" class="footer-link">Burak Bedir</a><br>
+      <br>
+      For informational purposes only.<br>
+      This is not investment advice.
+    </div>
+  </div>
+</footer>
+
+<script>
+const SUMMARY_URL = 'data/summary.json';
+const DATA_BASE   = 'data/';
+let activeCard = null;
+let seriesCache = {};
+
+function scoreClass(s) {
+  if (s === null || s === undefined) return 'loading';
+  return s >= 67 ? 'positive' : s >= 34 ? 'neutral' : 'negative';
+}
+function scoreLabel(s) {
+  if (s === null || s === undefined) return '—';
+  return s >= 67 ? 'Historically high' : s >= 34 ? 'Around its norm' : 'Historically low';
+}
+function dirArrow(d) {
+  return { up: '↑', down: '↓', neutral: '—' }[d] || '—';
+}
+function fmt(val, unit) {
+  if (val === null || val === undefined) return '—';
+  const n = parseFloat(val);
+  if (isNaN(n)) return '—';
+  if (unit === '%') return n.toFixed(1) + '%';
+  if (unit === 'USD') return n > 1000 ? '$' + (n/1000).toFixed(1) + 'k' : '$' + n.toFixed(2);
+  if (Math.abs(n) > 100000) return (n/1000).toFixed(0) + 'k';
+  if (Math.abs(n) > 1000)   return n.toFixed(0);
+  if (Math.abs(n) > 10)     return n.toFixed(1);
+  return n.toFixed(2);
+}
+function relChange(values) {
+  if (!values || values.length < 2) return null;
+  const last = values[values.length - 1];
+  const prev = values[values.length - 2];
+  if (!prev) return null;
+  return ((last - prev) / Math.abs(prev)) * 100;
+}
+function formatDate(iso) {
+  try {
+    return new Date(iso).toLocaleString('en-GB', {
+      day: 'numeric', month: 'long', year: 'numeric',
+      hour: '2-digit', minute: '2-digit', timeZone: 'UTC'
+    }) + ' UTC';
+  } catch { return iso; }
+}
+
+function renderHero(data) {
+  const s = data.overall_score;
+  const sc = scoreClass(s);
+  const el = document.getElementById('overall-score');
+  el.textContent = s !== null ? s.toFixed(1) : '—';
+  el.className = 'hero-score-number ' + sc;
+  const bar = document.getElementById('overall-bar');
+  bar.style.width = (s ?? 0) + '%';
+  bar.className = 'hero-score-bar-fill ' + sc;
+  const v = document.getElementById('overall-verdict');
+  v.textContent = scoreLabel(s);
+  v.className = 'hero-score-verdict ' + sc;
+  document.getElementById('sig-pos').textContent = data.positive_count;
+  document.getElementById('sig-neg').textContent = data.negative_count;
+  document.getElementById('sig-neu').textContent = data.neutral_count;
+  document.getElementById('updated-time').textContent = 'Updated ' + formatDate(data.updated_at);
+
+}
+
+function renderCards(data) {
+  const grid = document.getElementById('trend-grid');
+  grid.innerHTML = '';
+  const order = ['technology','sovereign_debt','geopolitics','domestic_politics','demography','energy'];
+  order.forEach(tid => {
+    const t = data.trends[tid];
+    if (!t) return;
+    const sc = scoreClass(t.score);
+    const card = document.createElement('div');
+    card.className = 'trend-card';
+    card.id = 'card-' + tid;
+    card.onclick = () => toggleDetail(tid, t);
+    card.innerHTML = `
+      <div class="card-category">${tid.replace(/_/g,' ').toUpperCase()}</div>
+      <div class="card-score-row">
+        <div class="card-score ${sc}">${t.score !== null ? t.score.toFixed(1) : '—'}</div>
+        <div class="card-direction ${t.direction}">${dirArrow(t.direction)}</div>
+      </div>
+      <div class="card-bar-bg">
+        <div class="card-bar-fill ${sc}" style="width:${t.score ?? 0}%"></div>
+      </div>
+      <div class="card-name">${t.label}</div>
+      <div class="card-desc">${t.description}</div>
+      <div class="card-footer">
+        <span class="card-series-n">${t.series_count} series</span>
+        <span class="card-signal ${sc}">${scoreLabel(t.score)}</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+async function toggleDetail(tid, trend) {
+  const panel = document.getElementById('detail-panel');
+  const wasActive = activeCard === tid;
+  document.querySelectorAll('.trend-card').forEach(c => c.classList.remove('active'));
+  if (wasActive) { closeDetail(); return; }
+  activeCard = tid;
+  document.getElementById('card-' + tid).classList.add('active');
+  document.getElementById('detail-title').textContent = trend.label + ': Underlying Data Series';
+  const sg = document.getElementById('series-grid');
+  sg.innerHTML = '<div style="padding:20px;font-family:var(--mono);font-size:11px;color:var(--ink-muted)">Loading series...</div>';
+  panel.classList.add('open');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  try {
+    let fd = seriesCache[tid];
+    if (!fd) {
+      const r = await fetch(DATA_BASE + tid + '.json');
+      fd = await r.json();
+      seriesCache[tid] = fd;
+    }
+    renderSeries(fd.series || {});
+  } catch(e) {
+    sg.innerHTML = `<div style="padding:20px;font-family:var(--mono);font-size:11px;color:var(--ink-muted)">
+      Series data unavailable. Please run the data update script and refresh.
+    </div>`;
+  }
+}
+
+function closeDetail() {
+  activeCard = null;
+  document.getElementById('detail-panel').classList.remove('open');
+  document.querySelectorAll('.trend-card').forEach(c => c.classList.remove('active'));
+}
+
+function renderSeries(series) {
+  const sg = document.getElementById('series-grid');
+  sg.innerHTML = '';
+  const entries = Object.entries(series);
+  if (!entries.length) {
+    sg.innerHTML = '<div style="padding:20px;font-family:var(--mono);font-size:11px;color:var(--ink-muted)">No series data.</div>';
+    return;
+  }
+  entries.forEach(([key, s]) => {
+    const vals = s.data?.values || [];
+    const dates = s.data?.dates || [];
+    const lastVal = vals[vals.length - 1];
+    const lastDate = dates[dates.length - 1];
+    const chg = relChange(vals);
+    const item = document.createElement('div');
+    item.className = 'series-item';
+    item.innerHTML = `
+      <div class="series-name">${s.label}</div>
+      <div class="series-source">${s.source || ''}</div>
+      <div class="series-value-row">
+        <span class="series-value">${fmt(lastVal, s.unit)}</span>
+        <span class="series-unit">${s.unit || ''}</span>
+        ${chg !== null ? `<span class="series-change ${chg >= 0 ? 'pos' : 'neg'}">${chg >= 0 ? '▲' : '▼'} ${Math.abs(chg).toFixed(1)}%</span>` : ''}
+      </div>
+      ${lastDate ? `<div class="series-date">${lastDate}</div>` : ''}
+    `;
+    sg.appendChild(item);
+  });
+}
+
+async function init() {
+  try {
+    const r = await fetch(SUMMARY_URL + '?t=' + Date.now());
+    const data = await r.json();
+    renderHero(data);
+    renderCards(data);
+    renderCharts();
+  } catch(e) {
+    document.getElementById('overall-score').textContent = '—';
+    document.getElementById('trend-grid').innerHTML = `
+      <div style="padding:32px 20px;font-family:var(--mono);font-size:11px;color:var(--ink-muted);grid-column:1/-1;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+        Data unavailable. Run the fetch script, start a local server, and reload this page.
+      </div>`;
+  }
+}
+init();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+
+// ── Chart config per megatrend ─────────────────────────────────
+const CHART_CONFIG = {
+  technology: {
+    label: "Technology",
+    series: [
+      { key: "semi_ip",    label: "Semiconductor IP",       color: "#1A3A5C", dash: [] },
+      { key: "productivity", label: "Labor Productivity",   color: "#B8860B", dash: [5,3] }
+    ]
+  },
+  sovereign_debt: {
+    label: "Sovereign Debt",
+    series: [
+      { key: "yield_10y", label: "10-Year Treasury Yield (%)", color: "#8B1A1A", dash: [] },
+      { key: "debt_gdp",  label: "Federal Debt / GDP (%)",     color: "#4A3F38", dash: [5,3] }
+    ]
+  },
+  geopolitics: {
+    label: "Geopolitics & Globalisation",
+    series: [
+      { key: "vix",    label: "VIX (Volatility Index)", color: "#8B1A1A", dash: [] },
+      { key: "us_epu", label: "US Policy Uncertainty",  color: "#1A3A5C", dash: [5,3] }
+    ]
+  },
+  domestic_politics: {
+    label: "Domestic Politics",
+    series: [
+      { key: "consumer_sent", label: "Consumer Sentiment",     color: "#1A3A5C", dash: [] },
+      { key: "labor_share",   label: "Labor Share of Income",  color: "#0A5C36", dash: [5,3] }
+    ]
+  },
+  demography: {
+    label: "Demography",
+    series: [
+      { key: "prime_age",      label: "Prime-Age Participation (%)", color: "#1A3A5C", dash: [] },
+      { key: "wb_old_dep_us",  label: "Old-Age Dependency Ratio",    color: "#8B1A1A", dash: [5,3] }
+    ]
+  },
+  energy: {
+    label: "Energy Disruption & Transition",
+    series: [
+      { key: "energy_cpi", label: "Energy CPI",              color: "#8B1A1A", dash: [] },
+      { key: "wb_fossil",  label: "Fossil Fuel Share (%)",   color: "#4A3F38", dash: [5,3] }
+    ]
+  }
+};
+
+// ── Resample to monthly for cleaner charts ─────────────────────
+function resampleMonthly(dates, values) {
+  const map = {};
+  for (let i = 0; i < dates.length; i++) {
+    const ym = dates[i].slice(0, 7);
+    map[ym] = values[i];
+  }
+  const keys = Object.keys(map).sort();
+  return { dates: keys, values: keys.map(k => map[k]) };
+}
+
+// ── Normalise to common date range for dual-axis ───────────────
+function alignSeries(s1, s2) {
+  const start = s1.dates[0] > s2.dates[0] ? s1.dates[0] : s2.dates[0];
+  const filter = (s) => {
+    const idx = s.dates.findIndex(d => d >= start);
+    return { dates: s.dates.slice(idx), values: s.values.slice(idx) };
+  };
+  return [filter(s1), filter(s2)];
+}
+
+// ── Map s2 values onto s1's date axis ─────────────────────────
+// Handles annual->monthly mismatch: annual value fills forward
+// until next annual observation (step interpolation)
+function mapToAxis(primaryDates, secondary) {
+  const result = new Array(primaryDates.length).fill(null);
+  let lastVal = null;
+  for (let i = 0; i < primaryDates.length; i++) {
+    const pd = primaryDates[i].slice(0, 7); // YYYY-MM
+    // Check if secondary has an observation for this year-month or year
+    for (let j = 0; j < secondary.dates.length; j++) {
+      const sd = secondary.dates[j].slice(0, 7);
+      const sy = secondary.dates[j].slice(0, 4);
+      if (sd === pd || sy === pd.slice(0, 4)) {
+        lastVal = secondary.values[j];
+        break;
+      }
+    }
+    result[i] = lastVal;
+  }
+  return result;
+}
+
+// ── Build one chart card ───────────────────────────────────────
+function buildChartCard(tid, config, fileData) {
+  const series = config.series;
+  const rawData = fileData.series;
+
+  const card = document.createElement('div');
+  card.className = 'chart-card';
+
+  // Legend HTML
+  const legendHTML = series.map(s => `
+    <div class="chart-legend-item">
+      <div class="chart-legend-line" style="background:${s.color};${s.dash.length ? 'background:repeating-linear-gradient(90deg,'+s.color+' 0,'+s.color+' 5px,transparent 5px,transparent 8px)' : ''}"></div>
+      ${s.label}
+    </div>
+  `).join('');
+
+  const canvasId = 'chart-' + tid;
+  card.innerHTML = `
+    <div class="chart-card-header">
+      <div>
+        <div class="chart-card-category">${tid.replace(/_/g,' ')}</div>
+        <div class="chart-card-title">${config.label}</div>
+      </div>
+    </div>
+    <div class="chart-legend">${legendHTML}</div>
+    <div class="chart-wrap">
+      <canvas id="${canvasId}" role="img" aria-label="Line chart showing key indicators for ${config.label} over time"></canvas>
+    </div>
+  `;
+
+  document.getElementById('charts-grid').appendChild(card);
+
+  // Get data for both series
+  const s1data = rawData[series[0].key];
+  const s2data = rawData[series[1].key];
+  if (!s1data || !s2data) return;
+
+  const r1 = resampleMonthly(s1data.data.dates, s1data.data.values);
+  const r2 = resampleMonthly(s2data.data.dates, s2data.data.values);
+  const [a1, a2] = alignSeries(r1, r2);
+
+  // Use a1 dates as x-axis (primary series)
+  const labels = a1.dates.map(d => d.slice(0,7));
+
+  // Thin labels — show one label every 3 years to avoid overlap
+  const seenYears = new Set();
+  const yearCount = {};
+  labels.forEach(l => { const yr = l.slice(0,4); yearCount[yr] = (yearCount[yr]||0)+1; });
+  const allYears = [...new Set(labels.map(l => l.slice(0,4)))].sort();
+  const showYears = new Set(allYears.filter((_,i) => i % 3 === 0));
+  const thinLabels = labels.map(l => {
+    const yr = l.slice(0, 4);
+    if (showYears.has(yr) && !seenYears.has(yr)) {
+      seenYears.add(yr);
+      return yr;
+    }
+    return '';
+  });
+
+  // Chart.js — dual y-axis
+  new Chart(document.getElementById(canvasId), {
+    type: 'line',
+    data: {
+      labels: thinLabels,
+      datasets: [
+        {
+          label: series[0].label,
+          data: a1.values,
+          borderColor: series[0].color,
+          borderWidth: 1.5,
+          pointRadius: 0,
+          tension: 0.3,
+          yAxisID: 'y1',
+          borderDash: series[0].dash,
+        },
+        {
+          label: series[1].label,
+          data: mapToAxis(a1.dates, a2),
+          borderColor: series[1].color,
+          borderWidth: 1.5,
+          pointRadius: 0,
+          tension: 0.3,
+          yAxisID: 'y2',
+          borderDash: series[1].dash,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#FEFCF8',
+          borderColor: '#D4C8B0',
+          borderWidth: 1,
+          titleColor: '#1A1614',
+          bodyColor: '#4A3F38',
+          titleFont: { family: "'Source Code Pro', monospace", size: 10 },
+          bodyFont: { family: "'Source Code Pro', monospace", size: 10 },
+          callbacks: {
+            title: (items) => items[0].label,
+            label: (item) => {
+              const v = item.raw;
+              if (v === null || v === undefined) return null;
+              return ' ' + item.dataset.label + ': ' + parseFloat(v).toFixed(2);
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: '#EAE4D8', lineWidth: 0.5 },
+          ticks: {
+            font: { family: "'Source Code Pro', monospace", size: 9 },
+            color: '#8C7F75',
+            maxRotation: 0,
+            autoSkip: false,
+          },
+          border: { color: '#D4C8B0' }
+        },
+        y1: {
+          position: 'left',
+          grid: { color: '#EAE4D8', lineWidth: 0.5 },
+          ticks: {
+            font: { family: "'Source Code Pro', monospace", size: 9 },
+            color: series[0].color,
+            maxTicksLimit: 5,
+          },
+          border: { color: '#D4C8B0', dash: [] }
+        },
+        y2: {
+          position: 'right',
+          grid: { drawOnChartArea: false },
+          ticks: {
+            font: { family: "'Source Code Pro', monospace", size: 9 },
+            color: series[1].color,
+            maxTicksLimit: 5,
+          },
+          border: { color: '#D4C8B0' }
+        }
+      }
+    }
+  });
+}
+
+// ── Load all chart data and render ────────────────────────────
+async function renderCharts() {
+  const order = ['technology','sovereign_debt','geopolitics','domestic_politics','demography','energy'];
+  for (const tid of order) {
+    try {
+      let fd = seriesCache[tid];
+      if (!fd) {
+        const r = await fetch(DATA_BASE + tid + '.json');
+        fd = await r.json();
+        seriesCache[tid] = fd;
+      }
+      buildChartCard(tid, CHART_CONFIG[tid], fd);
+    } catch(e) {
+      const card = document.createElement('div');
+      card.className = 'chart-card';
+      card.innerHTML = `<div style="padding:20px;font-family:var(--mono);font-size:11px;color:var(--ink-muted)">
+        Data for this megatrend could not be loaded.
+      </div>`;
+      document.getElementById('charts-grid').appendChild(card);
+    }
+  }
+}
+</script>
+
+</body>
+</html>
